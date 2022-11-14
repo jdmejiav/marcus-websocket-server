@@ -1,0 +1,27 @@
+{
+  "name": "marcus-websocket-server",
+  "version": "1.0.0",
+  "description": "WebSocket server for validating data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdmejiav/marcus-websocket-server.git"
+  },
+  "author": "https://github.com/jdmejiav/",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdmejiav/marcus-websocket-server/issues"
+  },
+  "homepage": "https://github.com/jdmejiav/marcus-websocket-server#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "http": "^0.0.1-security",
+    "mongodb": "^4.11.0",
+    "mongose": "^0.0.2-security",
+    "websocket": "^1.0.34"
+  }
+}
