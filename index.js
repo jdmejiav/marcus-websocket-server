@@ -5,7 +5,6 @@ require('dotenv').config()
 const server = http.createServer();
 server.listen(webSocketsServerPort);
 console.log('listening on port 8000');
-
 async function main() {
 
     try {
@@ -17,7 +16,6 @@ async function main() {
             const s4 = () => Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
             return s4() + s4() + '-' + s4();
         }
-
         wsServer.on('request', async function (request) {
             var userID = getUniqueID();
             console.log((new Date()) + 'Received a new connection from origin ' + request.origin + '.');
@@ -32,7 +30,6 @@ async function main() {
                             const retorno = {
                                 "day": input["day"],
                                 "type": "update",
-
                             }
                             clients[key].send(JSON.stringify(retorno))
                         }
@@ -40,7 +37,12 @@ async function main() {
                             delete clients[key]
                         }
                     }
-
+                    /*
+                    if (input["type"] == "update") {
+                        await axios.post(`${process.env.BACKEND_URL}/${input["day"]}/addMovement`)
+                            .then(res => res.data)
+                            .catch(err => console.log(err))
+                    }*/
                 }
             })
         });
